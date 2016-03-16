@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -34,15 +35,23 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellLeft" id="uyM-BF-Ghb">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellLeft" id="uyM-BF-Ghb" customClass="LeftCollectionViewCell" customModule="combustion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="203"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="295" height="203"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vav-DP-JH1">
-                                                    <rect key="frame" x="132.5" y="91.5" width="30" height="20.5"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjB-IV-Wmf">
+                                                    <rect key="frame" x="225" y="74" width="62" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="56" id="Xnc-qo-coi"/>
+                                                        <constraint firstAttribute="width" constant="62" id="j8l-nh-3FF"/>
+                                                    </constraints>
+                                                    <state key="normal" image="left_baloon"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vav-DP-JH1">
+                                                    <rect key="frame" x="109" y="91.5" width="77" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -52,29 +61,47 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="vav-DP-JH1" firstAttribute="centerX" secondItem="uyM-BF-Ghb" secondAttribute="centerX" id="aAf-EG-BGF"/>
+                                            <constraint firstItem="SjB-IV-Wmf" firstAttribute="centerY" secondItem="uyM-BF-Ghb" secondAttribute="centerY" constant="0.5" id="ih9-w3-ihr"/>
                                             <constraint firstItem="vav-DP-JH1" firstAttribute="centerY" secondItem="uyM-BF-Ghb" secondAttribute="centerY" id="ta4-d2-jrk"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="SjB-IV-Wmf" secondAttribute="trailing" id="xjP-cB-rOB"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="balloonButton" destination="SjB-IV-Wmf" id="PAG-3p-hwz"/>
+                                        </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellRight" id="Klw-sx-d8W">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellRight" id="Klw-sx-d8W" customClass="RightCollectionViewCell" customModule="combustion" customModuleProvider="target">
                                         <rect key="frame" x="305" y="0.0" width="295" height="203"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="295" height="203"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAw-4L-dBR">
-                                                    <rect key="frame" x="128" y="91" width="40" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAw-4L-dBR">
+                                                    <rect key="frame" x="104" y="91.5" width="87.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EW-CU-WiM">
+                                                    <rect key="frame" x="8" y="74" width="62" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="62" id="Nic-J8-bBp"/>
+                                                        <constraint firstAttribute="height" constant="56" id="kQx-Ig-WcY"/>
+                                                    </constraints>
+                                                    <state key="normal" image="right_baloon 2"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstAttribute="leadingMargin" secondItem="3EW-CU-WiM" secondAttribute="leading" id="DG7-mH-1Vh"/>
+                                            <constraint firstItem="3EW-CU-WiM" firstAttribute="centerY" secondItem="Klw-sx-d8W" secondAttribute="centerY" id="Poc-WQ-zEq"/>
                                             <constraint firstItem="XAw-4L-dBR" firstAttribute="centerX" secondItem="Klw-sx-d8W" secondAttribute="centerX" id="UFx-qw-Syo"/>
                                             <constraint firstItem="XAw-4L-dBR" firstAttribute="centerY" secondItem="Klw-sx-d8W" secondAttribute="centerY" id="jw1-Sc-xCc"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="balloonButton" destination="3EW-CU-WiM" id="86P-OE-RqR"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -99,4 +126,8 @@
             <point key="canvasLocation" x="324" y="317"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="left_baloon" width="462" height="466"/>
+        <image name="right_baloon 2" width="462" height="466"/>
+    </resources>
 </document>
