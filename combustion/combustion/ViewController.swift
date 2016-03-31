@@ -54,12 +54,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         //ir row is 0, it will be left cell, if it is 1, it will be right cell
         if indexPath.row == 0{
             let cellLeft = collectionView.dequeueReusableCellWithReuseIdentifier("cellLeft", forIndexPath: indexPath) as! LeftCollectionViewCell
-            cellLeft.balloonButton.hidden = false
+            cellLeft.hidden = false
 
             //if section is odd
             if(indexPath.section % 2 != 0){
                 print("hide left")
-                cellLeft.balloonButton.hidden = true
+                cellLeft.hidden = true
             }
             
             return cellLeft
@@ -67,13 +67,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
         else{
             let cellRight = collectionView.dequeueReusableCellWithReuseIdentifier("cellRight", forIndexPath: indexPath) as! RightCollectionViewCell
-            cellRight.balloonButton.hidden = false
+            cellRight.hidden = false
 
             
             //now using right side
             if(indexPath.section % 2 == 0){
                 print("hide right")
-                cellRight.balloonButton.hidden = true
+                cellRight.hidden = true
             }
            
             
