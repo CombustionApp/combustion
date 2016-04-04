@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet weak var UserNameText: UITextField!
@@ -46,6 +46,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        
         // Do any additional setup after loading the view.
     }
 

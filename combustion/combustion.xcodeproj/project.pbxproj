@@ -15,6 +15,7 @@
 		C526E135704E6ED41A30DD43 /* Pods_combustion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0696D7506EBC83354B32047E /* Pods_combustion.framework */; };
 		E2193B601CA378050046D43E /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2193B5F1CA378050046D43E /* AddEventViewController.swift */; };
 		E2193B621CA379870046D43E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2193B611CA379870046D43E /* LoginViewController.swift */; };
+		E29966651CAA021200BB3EE5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29966641CAA021200BB3EE5 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A772364D23591AC7AD434E5B /* Pods-combustion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-combustion.release.xcconfig"; path = "Pods/Target Support Files/Pods-combustion/Pods-combustion.release.xcconfig"; sourceTree = "<group>"; };
 		E2193B5F1CA378050046D43E /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		E2193B611CA379870046D43E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E29966641CAA021200BB3EE5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				8C7BA79A1C7E9ACB00060F77 /* Info.plist */,
 				E2193B5F1CA378050046D43E /* AddEventViewController.swift */,
 				E2193B611CA379870046D43E /* LoginViewController.swift */,
+				E29966641CAA021200BB3EE5 /* Event.swift */,
 			);
 			path = combustion;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				8C7BA7911C7E9ACB00060F77 /* ViewController.swift in Sources */,
 				E2193B601CA378050046D43E /* AddEventViewController.swift in Sources */,
 				8C7BA78F1C7E9ACB00060F77 /* AppDelegate.swift in Sources */,
+				E29966651CAA021200BB3EE5 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-combustion/Bolts.framework"
   install_framework "Pods-combustion/Parse.framework"
+  install_framework "Pods-combustion/ParseUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-combustion/Bolts.framework"
   install_framework "Pods-combustion/Parse.framework"
+  install_framework "Pods-combustion/ParseUI.framework"
 fi
