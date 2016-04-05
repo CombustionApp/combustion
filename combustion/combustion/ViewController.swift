@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
+import MBProgressHUD
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     @IBOutlet weak var collectionView: UICollectionView!
@@ -14,7 +17,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let cellSize = CGSize(width: 295, height: 203)
     var cellScale: CGFloat!
     var thisLineIsRightColumn: Bool = false
-    
+    var events: [PFObject]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,12 +29,41 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.pagingEnabled = false
-        
+    
         
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+
+    func fetchAllEvents(){
+        //fetch events
+        // Display HUD right before the request is made
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        Event.fetchAllEvents(self) { (events: [PFObject]?, error: NSError?) in
+            
+            if (events != nil){
+                print("sucess fetching events")
+                self.events = events
+                print(self.events)
+                // Hide HUD once the network request comes back (must be done on main UI thread)
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                
+                
+            }
+            else{
+                print("error fetching: \(error?.localizedDescription)")
+            }
+        }
+        
+        
+        
+
+    }
     
+    override func viewDidAppear(animated: Bool) {
+        self.fetchAllEvents()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

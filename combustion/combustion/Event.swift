@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import ParseUI
+import MBProgressHUD
 
 class Event: NSObject {
     
@@ -29,5 +30,17 @@ class Event: NSObject {
         
         event.saveInBackgroundWithBlock(completion)
            
+    }
+    class func fetchAllEvents(viewController: ViewController!, withCompletion completion: PFQueryArrayResultBlock?){
+        
+        
+        let query = PFQuery(className: "Event")
+        query.orderByDescending("createdAt")
+        query.includeKey("author")
+        
+        //fetch data asynchronously
+        query.findObjectsInBackgroundWithBlock(completion)
+
+
     }
 }

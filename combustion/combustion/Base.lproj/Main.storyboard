@@ -242,6 +242,7 @@
                     <navigationItem key="navigationItem" id="1YG-0T-3DD">
                         <barButtonItem key="rightBarButtonItem" title="Create Event" id="tda-1m-gEM">
                             <connections>
+                                <action selector="createEventAction:" destination="BYZ-38-t0r" id="TQq-mB-Vl5"/>
                                 <segue destination="Jm6-h3-0La" kind="push" id="Nqe-fG-VUI"/>
                             </connections>
                         </barButtonItem>
