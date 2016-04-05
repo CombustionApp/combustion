@@ -261,6 +261,60 @@
             </objects>
             <point key="canvasLocation" x="-36" y="337"/>
         </scene>
+        <!--Cell More Info View Controller-->
+        <scene sceneID="Euw-BT-7j3">
+            <objects>
+                <viewController storyboardIdentifier="cellMoreInfo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lds-r8-iF3" customClass="CellMoreInfoViewController" customModule="combustion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="314-bm-NMI"/>
+                        <viewControllerLayoutGuide type="bottom" id="mgK-2f-Tz0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uHN-P4-wT6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iUI-Nu-PqL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7CT-t6-3bm">
+                                <rect key="frame" x="0.0" y="119" width="600" height="62"/>
+                                <color key="backgroundColor" red="0.18112768308080807" green="0.1810722355873583" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvX-w5-bvP">
+                                <rect key="frame" x="0.0" y="180" width="600" height="83"/>
+                                <color key="backgroundColor" red="0.55338541666666674" green="0.55321601222365779" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </scrollView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fqH-vf-TjY">
+                                <rect key="frame" x="0.0" y="329" width="600" height="271"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C53-lH-lHs">
+                                <rect key="frame" x="544" y="285" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TIj-kj-YP1">
+                                <rect key="frame" x="0.0" y="263" width="548" height="58"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonSendComment" destination="C53-lH-lHs" id="Fob-gD-IDp"/>
+                        <outlet property="imageCell" destination="iUI-Nu-PqL" id="pTe-F4-OMq"/>
+                        <outlet property="scrollViewHorizontal" destination="jvX-w5-bvP" id="o97-pf-pqa"/>
+                        <outlet property="tableViewComments" destination="fqH-vf-TjY" id="ZfP-31-Vkl"/>
+                        <outlet property="textViewComment" destination="TIj-kj-YP1" id="9tH-xi-08r"/>
+                        <outlet property="viewHorizontal" destination="7CT-t6-3bm" id="1PN-yQ-UtG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Py9-UC-xmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36" y="1200"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="2Tm-Qu-LSf">
             <objects>

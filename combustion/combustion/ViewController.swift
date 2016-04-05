@@ -148,6 +148,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print("selected cell \(indexPath.section)")
+        //push cell more info view
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewControllerWithIdentifier("cellMoreInfo") as! CellMoreInfoViewController
+        nextVC.event = events[indexPath.section]
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
+
+
+
+
+
+
 
