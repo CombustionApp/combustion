@@ -35,7 +35,7 @@ class Event: NSObject {
         
         
         let query = PFQuery(className: "Event")
-        query.orderByDescending("createdAt")
+        query.orderByAscending("createdAt")
         query.includeKey("author")
         
         //fetch data asynchronously

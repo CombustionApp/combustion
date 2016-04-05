@@ -48,6 +48,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 // Hide HUD once the network request comes back (must be done on main UI thread)
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
                 
+                self.collectionView.reloadData()
                 
             }
             else{
@@ -70,7 +71,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     //rows number
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 40
+        if self.events != nil{
+            print("count events \(self.events.count)")
+            return self.events.count
+        }
+        else{
+            return 0
+        }
     }
     //columns number
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -94,6 +101,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 print("hide left")
                 cellLeft.hidden = true
             }
+            else{
+                let object = self.events[indexPath.section] 
+                cellLeft.labelName.text = object["title"] as? String
+            }
             
             return cellLeft
         }
@@ -108,6 +119,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 print("hide right")
                 cellRight.hidden = true
             }
+            else{
+                let object = self.events[indexPath.section]
+                cellRight.labelName.text = object["title"] as? String
+            }
+
            
             
             return cellRight

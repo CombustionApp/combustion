@@ -138,6 +138,9 @@
                                         </variation>
                                         <connections>
                                             <outlet property="balloonButton" destination="SjB-IV-Wmf" id="PAG-3p-hwz"/>
+                                            <outlet property="labelGoingCount" destination="3xk-a0-XDt" id="pUH-ct-Czh"/>
+                                            <outlet property="labelLikesCount" destination="fBG-SK-T5h" id="Ehn-c6-twZ"/>
+                                            <outlet property="labelName" destination="kMf-Re-2SI" id="AGg-Ey-6Ns"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellRight" id="Klw-sx-d8W" customClass="RightCollectionViewCell" customModule="combustion" customModuleProvider="target">
@@ -223,6 +226,9 @@
                                         </variation>
                                         <connections>
                                             <outlet property="balloonButton" destination="3EW-CU-WiM" id="86P-OE-RqR"/>
+                                            <outlet property="labelGoingCount" destination="JTz-9i-9EQ" id="BXS-Y3-2Pe"/>
+                                            <outlet property="labelLikesCount" destination="XAw-4L-dBR" id="JLv-hy-qk2"/>
+                                            <outlet property="labelName" destination="CL2-oB-UPA" id="EKd-B0-JL3"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

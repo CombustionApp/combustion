@@ -11,4 +11,7 @@ import UIKit
 class RightCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet weak var balloonButton: UIButton!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelLikesCount: UILabel!
+    @IBOutlet weak var labelGoingCount: UILabel!
 }
