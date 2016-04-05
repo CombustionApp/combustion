@@ -42,7 +42,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="295" height="203"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjB-IV-Wmf">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjB-IV-Wmf">
                                                     <rect key="frame" x="225" y="74" width="62" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="56" id="Xnc-qo-coi"/>
@@ -174,7 +174,7 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EW-CU-WiM">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EW-CU-WiM">
                                                     <rect key="frame" x="8" y="74" width="62" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="62" id="Nic-J8-bBp"/>
