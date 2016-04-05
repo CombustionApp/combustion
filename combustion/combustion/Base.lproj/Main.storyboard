@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfu-zy-ijP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Timeline-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="combustion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home Timeline" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="combustion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbL-Dg-4Qx">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbL-Dg-4Qx">
                                 <rect key="frame" x="295" y="0.0" width="10" height="600"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.38558382601351349" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -239,17 +239,173 @@
                             <constraint firstItem="xbL-Dg-4Qx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="raE-EX-Een"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1YG-0T-3DD">
+                        <barButtonItem key="rightBarButtonItem" title="Create Event" id="tda-1m-gEM">
+                            <connections>
+                                <segue destination="Jm6-h3-0La" kind="push" id="Nqe-fG-VUI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="l3B-3q-rkg" id="lYQ-Gd-c7k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324" y="317"/>
+            <point key="canvasLocation" x="-36" y="337"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="2Tm-Qu-LSf">
+            <objects>
+                <viewController id="Fqe-GG-g9n" customClass="LoginViewController" customModule="combustion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i08-VJ-enN"/>
+                        <viewControllerLayoutGuide type="bottom" id="oZE-Ut-5zq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JGo-Za-AzJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DcH-19-wG4">
+                                <rect key="frame" x="225" y="260" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mKh-OL-4hL">
+                                <rect key="frame" x="225" y="199" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIb-MA-O8b">
+                                <rect key="frame" x="246" y="396" width="55" height="30"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="SignUp:" destination="Fqe-GG-g9n" eventType="touchUpInside" id="QWw-oe-ohA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmo-gf-CeL">
+                                <rect key="frame" x="250" y="325" width="47" height="30"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="SignIn:" destination="Fqe-GG-g9n" eventType="touchUpInside" id="T9A-qf-XdI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5SX-uI-SIe"/>
+                    <connections>
+                        <outlet property="PasswordText" destination="DcH-19-wG4" id="gaX-56-f8y"/>
+                        <outlet property="UserNameText" destination="mKh-OL-4hL" id="Dsb-g4-DIs"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="loginSegue" id="SLT-Qy-dvw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hhy-wX-OHg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36" y="-467"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LAZ-1V-RiE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hfu-zy-ijP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lDs-fA-HRR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fqe-GG-g9n" kind="relationship" relationship="rootViewController" id="Sm0-ce-iz9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUf-fd-ny3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-837" y="-467"/>
+        </scene>
+        <!--Create Event View Controller-->
+        <scene sceneID="HOj-xJ-gao">
+            <objects>
+                <viewController storyboardIdentifier="Create Event" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jm6-h3-0La" customClass="CreateEventViewController" customModule="combustion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qpV-T3-ZkH"/>
+                        <viewControllerLayoutGuide type="bottom" id="y8Z-mh-7K4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1ff-X4-b0j">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="left_fire_baloon" translatesAutoresizingMaskIntoConstraints="NO" id="lSX-50-iwy">
+                                <rect key="frame" x="26" y="88" width="240" height="128"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Description" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1pI-ur-VJG">
+                                <rect key="frame" x="20" y="331" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Place" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tt9-BO-6Bw">
+                                <rect key="frame" x="20" y="435" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsj-pm-efR">
+                                <rect key="frame" x="24" y="499" width="88" height="30"/>
+                                <state key="normal" title="Create Event"/>
+                                <connections>
+                                    <action selector="createEvent:" destination="Jm6-h3-0La" eventType="touchUpInside" id="s9k-6a-Edj"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Time" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lDJ-0E-LdT">
+                                <rect key="frame" x="20" y="378" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCj-Ox-L5S">
+                                <rect key="frame" x="150" y="268" width="149" height="65"/>
+                            </pickerView>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MMk-Ch-rzy">
+                                <rect key="frame" x="160" y="378" width="146" height="78"/>
+                                <date key="date" timeIntervalSinceReferenceDate="480905248.18718201">
+                                    <!--2016-03-29 00:47:28 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDf-TF-A1l">
+                                <rect key="frame" x="24" y="165" width="248" height="57"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="photoButton:" destination="Jm6-h3-0La" eventType="touchUpInside" id="dat-BN-JYc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwG-Di-jR7">
+                                <rect key="frame" x="20" y="285" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TyQ-Uz-rn1"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="categoriesPicker" destination="uCj-Ox-L5S" id="tqL-Wx-6yz"/>
+                        <outlet property="datePicker" destination="MMk-Ch-rzy" id="kfR-Kk-d9J"/>
+                        <outlet property="eventDescription" destination="1pI-ur-VJG" id="cUw-BL-TjM"/>
+                        <outlet property="eventPlace" destination="Tt9-BO-6Bw" id="2m0-aw-0XN"/>
+                        <outlet property="eventTimeField" destination="lDJ-0E-LdT" id="e5k-NU-QBj"/>
+                        <outlet property="eventTitle" destination="bwG-Di-jR7" id="z4q-sX-N34"/>
+                        <outlet property="picEvent" destination="lSX-50-iwy" id="NLc-dA-ELw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OaR-Gs-0BS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663" y="337"/>
         </scene>
     </scenes>
     <resources>
         <image name="left_baloon" width="462" height="466"/>
+        <image name="left_fire_baloon" width="468" height="628"/>
         <image name="right_baloon 2" width="462" height="466"/>
     </resources>
 </document>

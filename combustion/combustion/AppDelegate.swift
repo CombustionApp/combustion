@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Parse.initializeWithConfiguration(
+            ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "combustionmobileapp"
+                configuration.clientKey = "cascccacascascas"  // set to nil assuming you have not set clientKey
+                configuration.server = "http://combustionmobileapp.herokuapp.com/parse"
+            })
+        )
         // Override point for customization after application launch.
         return true
+
     }
 
     func applicationWillResignActive(application: UIApplication) {
