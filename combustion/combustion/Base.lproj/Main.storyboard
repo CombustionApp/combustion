@@ -9,7 +9,7 @@
         <!--Home Timeline-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Home Timeline" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="combustion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" title="Home Timeline" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="combustion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -289,7 +289,7 @@
                                 <rect key="frame" x="250" y="325" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <action selector="SignIn:" destination="Fqe-GG-g9n" eventType="touchUpInside" id="T9A-qf-XdI"/>
+                                    <action selector="SignIn:" destination="Fqe-GG-g9n" eventType="touchUpInside" id="mGv-Zp-8La"/>
                                 </connections>
                             </button>
                         </subviews>

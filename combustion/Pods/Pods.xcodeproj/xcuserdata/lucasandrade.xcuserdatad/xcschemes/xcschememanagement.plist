@@ -3,8 +3,60 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict/>
+	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ParseUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-combustion.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>56F507810B644754B4BC5FDB9BA62CF6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>724F2C47BD7011F795E665B815A96F6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7A773493333D33873028899E40CDA20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2FB884EC36055035E28AA858AF0872D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4D48B071C429D018A62F0B1AA6AB4D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

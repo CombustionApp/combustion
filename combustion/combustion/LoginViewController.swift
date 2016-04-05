@@ -8,6 +8,8 @@
 
 import UIKit
 import Parse
+import MBProgressHUD
+
 
 class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -41,6 +43,40 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
     }
     @IBAction func SignIn(sender: AnyObject) {
+        
+        // Display HUD right before the request is made
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        
+        
+        PFUser.logInWithUsernameInBackground(UserNameText.text!, password: PasswordText.text!)
+        { (user: PFUser?, error: NSError?) -> Void in
+            if user != nil{
+                print("you are logged in")
+                
+                // Hide HUD once the network request comes back (must be done on main UI thread)
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                
+                
+                let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("home") as! ViewController
+      
+                self.navigationController!.pushViewController(viewController, animated: true)
+            }
+            else{
+                // Hide HUD once the network request comes back (must be done on main UI thread)
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                
+                //alert of wrong action
+                let alert = UIAlertController(title: "Incorrect username or password ", message: "Please, try again", preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "Ok", style: .Default) { (action: UIAlertAction) -> Void in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                alert.addAction(okAction)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            
+        }
+
+        
     }
     
     override func viewDidLoad() {
