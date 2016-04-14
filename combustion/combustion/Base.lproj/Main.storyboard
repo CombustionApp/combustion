@@ -287,7 +287,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like_big" translatesAutoresizingMaskIntoConstraints="NO" id="j5i-7x-hKD">
                                         <rect key="frame" x="114" y="8" width="28" height="26"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iwillgo_Big_blue" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-nI-CnN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iwillgo_Big" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-nI-CnN">
                                         <rect key="frame" x="234" y="6" width="28" height="29"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1313" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dj-oG-hDY">
@@ -302,18 +302,42 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcI-6b-ldW">
+                                        <rect key="frame" x="234" y="-5" width="89" height="47"/>
+                                        <connections>
+                                            <action selector="buttonIWillGo:" destination="Lds-r8-iF3" eventType="touchUpInside" id="P3D-Yp-ATB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcE-xQ-CUQ">
+                                        <rect key="frame" x="114" y="-5" width="89" height="47"/>
+                                        <connections>
+                                            <action selector="buttonIlike:" destination="Lds-r8-iF3" eventType="touchUpInside" id="YC0-jQ-tAg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18112768308080807" green="0.1810722355873583" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Vfs-nI-CnN" firstAttribute="centerY" secondItem="7CT-t6-3bm" secondAttribute="centerY" id="4xC-T1-adn"/>
                                     <constraint firstAttribute="height" constant="42" id="90d-mc-9cp"/>
+                                    <constraint firstItem="Vfs-nI-CnN" firstAttribute="leading" secondItem="7CT-t6-3bm" secondAttribute="leading" constant="234" id="GeW-xY-TBA"/>
+                                    <constraint firstItem="2dj-oG-hDY" firstAttribute="leading" secondItem="Vfs-nI-CnN" secondAttribute="trailing" constant="8" id="L7T-ZO-Pge"/>
                                     <constraint firstItem="j5i-7x-hKD" firstAttribute="centerY" secondItem="7CT-t6-3bm" secondAttribute="centerY" id="PCM-0s-cjZ"/>
                                     <constraint firstItem="6ws-eZ-gCR" firstAttribute="leading" secondItem="j5i-7x-hKD" secondAttribute="trailing" constant="8" id="VMY-7V-mEK"/>
                                     <constraint firstItem="Vfs-nI-CnN" firstAttribute="centerY" secondItem="7CT-t6-3bm" secondAttribute="centerY" id="a1K-EP-Bv1"/>
+                                    <constraint firstItem="2dj-oG-hDY" firstAttribute="centerY" secondItem="Vfs-nI-CnN" secondAttribute="centerY" id="cLo-el-q3J"/>
                                     <constraint firstItem="6ws-eZ-gCR" firstAttribute="centerY" secondItem="7CT-t6-3bm" secondAttribute="centerY" id="doO-Rf-ENM"/>
                                     <constraint firstItem="2dj-oG-hDY" firstAttribute="centerY" secondItem="7CT-t6-3bm" secondAttribute="centerY" id="vP9-Jt-Spe"/>
                                     <constraint firstItem="2dj-oG-hDY" firstAttribute="leading" secondItem="Vfs-nI-CnN" secondAttribute="trailing" constant="8" id="z4Q-4o-y3k"/>
                                     <constraint firstItem="Vfs-nI-CnN" firstAttribute="leading" secondItem="6ws-eZ-gCR" secondAttribute="trailing" constant="46" id="zdH-9M-fV5"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="a1K-EP-Bv1"/>
+                                        <exclude reference="zdH-9M-fV5"/>
+                                        <exclude reference="vP9-Jt-Spe"/>
+                                        <exclude reference="z4Q-4o-y3k"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvX-w5-bvP">
                                 <rect key="frame" x="0.0" y="180" width="600" height="83"/>
@@ -398,7 +422,11 @@
                     <connections>
                         <outlet property="buttonSendComment" destination="C53-lH-lHs" id="Fob-gD-IDp"/>
                         <outlet property="imageEventCategory" destination="KXn-Ca-06W" id="yjs-UB-0oC"/>
+                        <outlet property="imageIconIGo" destination="Vfs-nI-CnN" id="vGP-96-9Vz"/>
+                        <outlet property="imageIconLike" destination="j5i-7x-hKD" id="TAa-TN-0m0"/>
                         <outlet property="labelEventName" destination="FQ3-Fj-5K5" id="0TA-SQ-uYk"/>
+                        <outlet property="labelNumberGoing" destination="2dj-oG-hDY" id="T26-Vn-dLn"/>
+                        <outlet property="labelNumberLiking" destination="6ws-eZ-gCR" id="fGX-lX-5un"/>
                         <outlet property="scrollViewHorizontal" destination="jvX-w5-bvP" id="o97-pf-pqa"/>
                         <outlet property="tableViewComments" destination="fqH-vf-TjY" id="ZfP-31-Vkl"/>
                         <outlet property="textViewComment" destination="TIj-kj-YP1" id="9tH-xi-08r"/>
@@ -703,7 +731,7 @@
     </scenes>
     <resources>
         <image name="flame_red_Big" width="51" height="84"/>
-        <image name="iwillgo_Big_blue" width="28" height="29"/>
+        <image name="iwillgo_Big" width="28" height="29"/>
         <image name="left_baloon" width="462" height="466"/>
         <image name="left_fire_baloon" width="468" height="628"/>
         <image name="like_big" width="28" height="26"/>
