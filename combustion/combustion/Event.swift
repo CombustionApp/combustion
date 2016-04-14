@@ -26,6 +26,8 @@ class Event: NSObject {
         event["time"] = time
         event["category"] = category
         event["author"] = PFUser.currentUser()
+        event["likes_count"] = 0
+        event["going_count"] = 0
         
         
         event.saveInBackgroundWithBlock(completion)
@@ -41,6 +43,29 @@ class Event: NSObject {
         //fetch data asynchronously
         query.findObjectsInBackgroundWithBlock(completion)
 
+
+    }
+    
+    class func postLikeToServer(event: PFObject, liking: Bool){
+        if liking{
+            event["likes_count"] = ((event["likes_count"] as! Int) + 1)
+        }
+        else{
+            event["likes_count"] = ((event["likes_count"] as! Int) - 1)
+        }
+        
+        event.saveInBackground()
+    }
+    class func postGoingToServer(event:PFObject, going: Bool){
+        if going{
+            event["going_count"] = ((event["going_count"] as! Int) + 1)
+
+        }
+        else{
+            event["going_count"] = ((event["going_count"] as! Int) - 1)
+        }
+        
+        event.saveInBackground()
 
     }
 }
