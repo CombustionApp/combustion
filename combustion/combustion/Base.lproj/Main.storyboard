@@ -287,7 +287,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like_big" translatesAutoresizingMaskIntoConstraints="NO" id="j5i-7x-hKD">
                                         <rect key="frame" x="114" y="8" width="28" height="26"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iwillgo_Big" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-nI-CnN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iwillgo_Big_blue" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-nI-CnN">
                                         <rect key="frame" x="234" y="6" width="28" height="29"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1313" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dj-oG-hDY">
@@ -703,7 +703,7 @@
     </scenes>
     <resources>
         <image name="flame_red_Big" width="51" height="84"/>
-        <image name="iwillgo_Big" width="28" height="29"/>
+        <image name="iwillgo_Big_blue" width="28" height="29"/>
         <image name="left_baloon" width="462" height="466"/>
         <image name="left_fire_baloon" width="468" height="628"/>
         <image name="like_big" width="28" height="26"/>
