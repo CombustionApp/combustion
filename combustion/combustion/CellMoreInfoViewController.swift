@@ -12,19 +12,24 @@ import Parse
 class CellMoreInfoViewController: UIViewController {
 
     @IBOutlet weak var imageCell: UIImageView!
+    @IBOutlet weak var labelEventName: UILabel!
     @IBOutlet weak var viewHorizontal: UIView!
     @IBOutlet weak var scrollViewHorizontal: UIScrollView!
     @IBOutlet weak var textViewComment: UITextView!
     @IBOutlet weak var tableViewComments: UITableView!
     @IBOutlet weak var buttonSendComment: UIButton!
     
+    @IBOutlet weak var imageEventCategory: UIImageView!
     var event: PFObject!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("more info vc \(event["title"])")
+        if let event = event{
+            self.labelEventName.text = (event["title"] as! String)
+
+        }
         // Do any additional setup after loading the view.
     }
 
