@@ -24,6 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "http://combustionmobileapp.herokuapp.com/parse"
             })
         )
+        
+        if PFUser.currentUser() != nil {
+            let rootViewController = self.window!.rootViewController as! UINavigationController
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewcontroller = mainStoryboard.instantiateViewControllerWithIdentifier("home") as! ViewController
+            rootViewController.pushViewController(viewcontroller, animated: false)
+        }
+        
         // Override point for customization after application launch.
         return true
 
