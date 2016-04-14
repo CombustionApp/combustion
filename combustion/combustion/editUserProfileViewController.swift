@@ -11,6 +11,8 @@ import Parse
 import ParseUI
 
 class editUserProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var placeholderImage: UIImage!
 
     @IBOutlet weak var profileImageView: PFImageView!
     @IBOutlet weak var nameField: UITextField!
@@ -49,7 +51,6 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
         }
         
         
-        
         // Do any additional setup after loading the view.
     }
 
@@ -60,9 +61,10 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
     
     @IBAction func updateProfileAction(sender: AnyObject) {
         if let user = PFUser.currentUser(){
-            let imageData: NSData? = UIImagePNGRepresentation(profileImageView.image!)
+            let imageData: NSData = UIImagePNGRepresentation(placeholderImage)!
             print("Before \(user)")
-            user["profile_image"] = PFFile(data: imageData!)
+            user["profile_image"] = PFFile(data: imageData)
+            print("PROF IMAG \(user["profile_image"])")
             user["name"] = nameField.text
             user.email = emailField.text
             user["age"] = ageField.text
@@ -70,31 +72,31 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
             user["gender"] = genderSegment.selectedSegmentIndex
             print("after \(user)")
             
+            
+           
+            
+            do {
+                try user.save()
+            } catch {
+                print("Ya done messed up")
+            }
         
-            user.saveInBackground()
-        }
-       
+            user.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    print("IT WORKEd maybe idk anymore")
+                } else {
+                    print("well... shit")
+                }
+            })
         
     }
-    
+    }
     @IBAction func editPictureAction(sender: AnyObject) {
         
         self.presentViewController(pickerController, animated: true, completion: nil)
         
     }
 
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
-        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        profileImageView.image = originalImage
-        
-        dismissViewControllerAnimated(true, completion: nil)
-        
-
-    
-    }
-    
     func resize(image: UIImage, newSize: CGSize) -> UIImage {
         let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
         resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
@@ -107,7 +109,20 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
         return newImage
     }
     
-    /*
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        placeholderImage = originalImage
+        
+        placeholderImage = resize(originalImage, newSize: CGSize(width: 120, height: 120))
+        profileImageView.image = placeholderImage
+        dismissViewControllerAnimated(true, completion: nil)
+        
+
+    
+    }
+        /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
