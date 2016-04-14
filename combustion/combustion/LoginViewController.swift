@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             if success {
                 print("New User created- user: \(newUser.username) pass: \(newUser.password)")
                 
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
+                self.performSegueWithIdentifier("editSegue", sender: nil)
                 
             } else {
                 print(error?.localizedDescription)
