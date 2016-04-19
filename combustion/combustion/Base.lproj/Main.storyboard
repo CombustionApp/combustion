@@ -672,9 +672,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="left_fire_baloon" translatesAutoresizingMaskIntoConstraints="NO" id="lSX-50-iwy">
-                                <rect key="frame" x="26" y="88" width="240" height="128"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Description" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1pI-ur-VJG">
                                 <rect key="frame" x="20" y="331" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -706,13 +703,6 @@
                                     <!--2016-03-29 00:47:28 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDf-TF-A1l">
-                                <rect key="frame" x="24" y="165" width="248" height="57"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="photoButton:" destination="Jm6-h3-0La" eventType="touchUpInside" id="dat-BN-JYc"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwG-Di-jR7">
                                 <rect key="frame" x="20" y="285" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -731,7 +721,6 @@
                         <outlet property="eventPlace" destination="Tt9-BO-6Bw" id="2m0-aw-0XN"/>
                         <outlet property="eventTimeField" destination="lDJ-0E-LdT" id="e5k-NU-QBj"/>
                         <outlet property="eventTitle" destination="bwG-Di-jR7" id="z4q-sX-N34"/>
-                        <outlet property="picEvent" destination="lSX-50-iwy" id="NLc-dA-ELw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OaR-Gs-0BS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -743,7 +732,6 @@
         <image name="flame_red_Big" width="51" height="84"/>
         <image name="iwillgo_Big" width="28" height="29"/>
         <image name="left_baloon" width="462" height="466"/>
-        <image name="left_fire_baloon" width="468" height="628"/>
         <image name="like_big" width="28" height="26"/>
         <image name="right_baloon 2" width="462" height="466"/>
     </resources>

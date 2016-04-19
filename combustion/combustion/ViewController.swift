@@ -104,6 +104,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             else{
                 let object = self.events[indexPath.section] 
                 cellLeft.labelName.text = object["title"] as? String
+                cellLeft.labelLikesCount.text = String(object["likes_count"])
+                cellLeft.labelGoingCount.text = String(object["going_count"])
             }
             
             return cellLeft
@@ -122,6 +124,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             else{
                 let object = self.events[indexPath.section]
                 cellRight.labelName.text = object["title"] as? String
+                cellRight.labelLikesCount.text = String(object["likes_count"])
+                cellRight.labelGoingCount.text = String(object["going_count"])
+
             }
 
            

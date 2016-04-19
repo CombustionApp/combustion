@@ -17,10 +17,9 @@ class Event: NSObject {
         
         let event = PFObject(className: "Event")
         
-        let imageData: NSData = UIImagePNGRepresentation(image!)!
         
         event["title"] = title
-        event["image"] = PFFile(data: imageData)
+        //event["image"] = PFFile(data: imageData)
         event["description"] = description
         event["place"] = place
         event["time"] = time

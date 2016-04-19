@@ -70,7 +70,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         //let newEvent = PFObject()
         
-        Event.postEvent(withImage: picEvent.image, withTitle: eventTitle.text, withDescription: eventDescription.text, withPlace: eventPlace.text, withTime: datePicker.date, withCategory: categories[catRow]) { (success: Bool, error:NSError?) in
+        Event.postEvent(withImage: nil, withTitle: eventTitle.text, withDescription: eventDescription.text, withPlace: eventPlace.text, withTime: datePicker.date, withCategory: categories[catRow]) { (success: Bool, error:NSError?) in
             if(success){
                 print("success")
                 self.navigationController?.popViewControllerAnimated(true)

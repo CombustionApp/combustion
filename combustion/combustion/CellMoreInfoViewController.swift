@@ -32,7 +32,8 @@ class CellMoreInfoViewController: UIViewController {
         
         if let event = event{
             self.labelEventName.text = (event["title"] as! String)
-            print(event)
+            self.labelNumberLiking.text = String(event["likes_count"])
+            self.labelNumberGoing.text = String(event["going_count"])
         }
         // Do any additional setup after loading the view.
     }
