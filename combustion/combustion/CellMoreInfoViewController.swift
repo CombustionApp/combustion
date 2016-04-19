@@ -49,6 +49,7 @@ class CellMoreInfoViewController: UIViewController {
             self.imageIconIGo.image =  UIImage(named: "iwillgo_Big_blue")
             self.labelNumberGoing.text = String(Int(labelNumberGoing.text!)! + 1)
             self.labelNumberGoing.textColor = UIColor(red: 60/255, green: 135/255, blue: 231/255, alpha: 1)
+            (event["goers"] as! NSMutableArray).addObject(PFUser.currentUser()!)
             
             Event.postGoingToServer(event, going: true)
         }
@@ -57,6 +58,7 @@ class CellMoreInfoViewController: UIViewController {
             self.imageIconIGo.image =  UIImage(named: "iwillgo_Big")
             self.labelNumberGoing.text = String(Int(labelNumberGoing.text!)! - 1)
             self.labelNumberGoing.textColor = UIColor.whiteColor()
+            (event["goers"] as! NSMutableArray).removeObject(PFUser.currentUser()!)
             
             Event.postGoingToServer(event, going: false)
 
@@ -68,7 +70,9 @@ class CellMoreInfoViewController: UIViewController {
             self.imageIconLike.image =  UIImage(named: "like_big_red")
             self.labelNumberLiking.text = String(Int(labelNumberLiking.text!)! + 1)
             self.labelNumberLiking.textColor = UIColor(red: 250/255, green: 44/255, blue: 52/255, alpha: 1)
-            
+            var likers = (event["likers"] as! [PFUser])
+            likers.append(PFUser.currentUser()!)
+            event["likers"] = likers
             Event.postLikeToServer(event, liking: true)
         }
         //not liking anymore
@@ -76,7 +80,8 @@ class CellMoreInfoViewController: UIViewController {
             self.imageIconLike.image =  UIImage(named: "like_big")
             self.labelNumberLiking.text = String(Int(labelNumberLiking.text!)! - 1)
             self.labelNumberLiking.textColor = UIColor.whiteColor()
-            
+            (event["likers"] as! NSMutableArray).removeObject(PFUser.currentUser()!)
+
             Event.postLikeToServer(event, liking: false)
 
         }

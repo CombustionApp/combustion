@@ -28,7 +28,8 @@ class Event: NSObject {
         event["author"] = PFUser.currentUser()
         event["likes_count"] = 0
         event["going_count"] = 0
-        
+        event["likers"] = []
+        event["goers"] = []
         
         event.saveInBackgroundWithBlock(completion)
            
@@ -47,6 +48,8 @@ class Event: NSObject {
     }
     
     class func postLikeToServer(event: PFObject, liking: Bool){
+        print(event)
+
         if liking{
             event["likes_count"] = ((event["likes_count"] as! Int) + 1)
         }
@@ -56,6 +59,7 @@ class Event: NSObject {
         
         event.saveInBackground()
     }
+    
     class func postGoingToServer(event:PFObject, going: Bool){
         if going{
             event["going_count"] = ((event["going_count"] as! Int) + 1)
@@ -64,8 +68,9 @@ class Event: NSObject {
         else{
             event["going_count"] = ((event["going_count"] as! Int) - 1)
         }
-        
+        print("EVENT IS: \(event)")
         event.saveInBackground()
 
     }
+        
 }
