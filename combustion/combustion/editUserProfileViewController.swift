@@ -75,6 +75,7 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func updateProfileAction(sender: AnyObject) {
+        
         if let user = PFUser.currentUser(){
             let imageData: NSData
             if placeholderImage != nil {
@@ -94,13 +95,6 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
             
             
            
-            
-            do {
-                try user.save()
-            } catch {
-                print("Ya done messed up")
-            }
-        
             user.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
                 if (success) {
                     print("IT WORKEd maybe idk anymore")

@@ -32,7 +32,7 @@ class CellMoreInfoViewController: UIViewController {
         
         if let event = event{
             self.labelEventName.text = (event["title"] as! String)
-
+            print(event)
         }
         // Do any additional setup after loading the view.
     }
@@ -44,27 +44,41 @@ class CellMoreInfoViewController: UIViewController {
     
 
     @IBAction func buttonIWillGo(sender: AnyObject) {
+        //going
         if(self.imageIconIGo.image! == UIImage(named: "iwillgo_Big")){
             self.imageIconIGo.image =  UIImage(named: "iwillgo_Big_blue")
             self.labelNumberGoing.text = String(Int(labelNumberGoing.text!)! + 1)
             self.labelNumberGoing.textColor = UIColor(red: 60/255, green: 135/255, blue: 231/255, alpha: 1)
+            
+            Event.postGoingToServer(event, going: true)
         }
+        //not going anymore
         else{
             self.imageIconIGo.image =  UIImage(named: "iwillgo_Big")
             self.labelNumberGoing.text = String(Int(labelNumberGoing.text!)! - 1)
             self.labelNumberGoing.textColor = UIColor.whiteColor()
+            
+            Event.postGoingToServer(event, going: false)
+
         }
     }
     @IBAction func buttonIlike(sender: AnyObject) {
+        //liking
         if(self.imageIconLike.image! == UIImage(named: "like_big")){
             self.imageIconLike.image =  UIImage(named: "like_big_red")
             self.labelNumberLiking.text = String(Int(labelNumberLiking.text!)! + 1)
             self.labelNumberLiking.textColor = UIColor(red: 250/255, green: 44/255, blue: 52/255, alpha: 1)
+            
+            Event.postLikeToServer(event, liking: true)
         }
+        //not liking anymore
         else{
             self.imageIconLike.image =  UIImage(named: "like_big")
             self.labelNumberLiking.text = String(Int(labelNumberLiking.text!)! - 1)
             self.labelNumberLiking.textColor = UIColor.whiteColor()
+            
+            Event.postLikeToServer(event, liking: false)
+
         }
 
     }
