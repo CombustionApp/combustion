@@ -15,6 +15,7 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
     var placeholderImage: UIImage!
 
     @IBOutlet weak var profileImageView: PFImageView!
+    @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var ageField: UITextField!
@@ -23,10 +24,17 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
     
     var user = PFUser.currentUser()
     var pickerController = UIImagePickerController()
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        if defaults.boolForKey("firstTime") == true {
+            skipButton.hidden = false
+        } else {
+            skipButton.hidden = true
+        }
+        
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         
@@ -54,6 +62,13 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
+        
+        defaults.setBool(false, forKey: "firstTime")
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,7 +76,12 @@ class editUserProfileViewController: UIViewController, UIImagePickerControllerDe
     
     @IBAction func updateProfileAction(sender: AnyObject) {
         if let user = PFUser.currentUser(){
-            let imageData: NSData = UIImagePNGRepresentation(placeholderImage)!
+            let imageData: NSData
+            if placeholderImage != nil {
+                imageData = UIImagePNGRepresentation(placeholderImage)!
+            } else {
+                imageData = UIImagePNGRepresentation(UIImage(named: "Beautiful")!)!
+            }
             print("Before \(user)")
             user["profile_image"] = PFFile(data: imageData)
             print("PROF IMAG \(user["profile_image"])")

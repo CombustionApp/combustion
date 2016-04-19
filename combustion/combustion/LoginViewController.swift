@@ -13,6 +13,7 @@ import MBProgressHUD
 
 class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     @IBOutlet weak var UserNameText: UITextField!
     @IBOutlet weak var PasswordText: UITextField!
@@ -34,8 +35,8 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             
             if success {
                 print("New User created- user: \(newUser.username) pass: \(newUser.password)")
-                
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
+                self.defaults.setBool(true, forKey: "firstTime")
+                self.performSegueWithIdentifier("editSegue", sender: nil)
                 
             } else {
                 print(error?.localizedDescription)
@@ -53,9 +54,9 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             if user != nil{
                 print("you are logged in")
                 
+                self.defaults.setBool(false, forKey: "firstTime")
                 // Hide HUD once the network request comes back (must be done on main UI thread)
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
-                
                 
                 let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("home") as! ViewController
       
@@ -82,9 +83,40 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let vc = UIImagePickerController()
-        vc.delegate = self
-        vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        
+        
+        PFUser.logInWithUsernameInBackground(UserNameText.text!, password: PasswordText.text!)
+            { (user: PFUser?, error: NSError?) -> Void in
+                if user != nil{
+                    print("you are logged in")
+                    
+                    self.defaults.setBool(false, forKey: "firstTime")
+                    self.defaults.setObject(user, forKey: "currentUser")
+                    // Hide HUD once the network request comes back (must be done on main UI thread)
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    
+                    let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("home") as! ViewController
+                    
+                    self.navigationController!.pushViewController(viewController, animated: true)
+                }
+                else{
+                    // Hide HUD once the network request comes back (must be done on main UI thread)
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    
+                    //alert of wrong action
+                    let alert = UIAlertController(title: "Incorrect username or password ", message: "Please, try again", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .Default) { (action: UIAlertAction) -> Void in
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    alert.addAction(okAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                
+        }
+    
+
+        
         
         // Do any additional setup after loading the view.
     }
